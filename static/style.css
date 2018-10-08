@@ -1,0 +1,31 @@
+html, body{
+    height: 100%;
+    max-height: 100%;
+    font-family: 'Roboto Condensed', 'sans-serif';
+}
+.top-container{
+    margin-top: 10%;
+    color: #110100;
+}
+
+.general-container{
+    background-color: #ffa64f;
+    height: 40%;
+    #line-height: 1;
+}
+
+.general-container form{
+    margin-top: 20px;
+    color:#6b593b;
+    font-family: 'Roboto', 'sans-serif';
+}
+
+.title{
+    color:whitesmoke;
+    text-align:center;
+}
+
+.button{
+    padding-right: 120px;
+    padding-left: 120px;
+}
