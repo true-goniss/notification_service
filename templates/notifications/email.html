@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>send Email</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500i" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <style>
+        .title{
+        color:black;
+        text-align:center;
+        }
+    </style>
+</head>
+<body>
+
+                    <h1 class="title">Рассылка Email</h1>
+
+                    <div>
+                        <form method="post">{% csrf_token %}
+
+                         <div class="form-group">
+                         <label>От: </label>
+                         <input name="{{ form.from_email.name }}" class="form-control" placeholder="От кого" value="{{ form.from_email.value }}" readonly="true">
+                         </div>
+
+                         <div class="form-group">
+                         <label>Тема: </label>
+                         <input name="{{ form.subject.name }}" class="form-control" placeholder="Тема">
+                         </div>
+
+                         <div class="form-group">
+                         <label>Сообщение: </label>
+                         <textarea name="{{ form.message.name }}" rows=20 class="form-control" placeholder="Сообщение" required></textarea>
+                         </div>
+
+                        <div class="form-actions">
+                         <button type="submit" class="btn btn-dark">Отправить</button>
+                        </div>
+                        </form>
+
+                    </div>
+
+
+</body>
+</html>
+
+
+{#<form method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ form }}#}
+{#    <div class="form-actions">#}
+{#      <button type="submit">Send</button>#}
+{#    </div>#}
+{#</form>#}

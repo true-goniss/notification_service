@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>site by Gon_Iss</title>
+    <title>Сервис оповещений о критических событиях</title>
 
         <!-- Bootstrap-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
@@ -15,15 +15,38 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
 
+
+    <style>
+
+        .general-container form{
+        color:#9c6d4ccf;
+        height: 48%;
+        font-family: 'Roboto', 'sans-serif';
+    }
+        .general-container{
+    {#margin-top: 10px;#}
+    {#background-color: #ffa64f;#}
+    height: 50%;
+    }
+    .top-container{
+        margin-top: 50px;
+        {#color: #110100;#}
+        height: 50%;
+    }
+    body {
+        background-image: url("https://www.dropbox.com/s/v2nhy1x8hndl61d/background.png?dl=1");
+    }
+    </style>
+
 </head>
 <body>
 
     <div class="general-container">
         <div class="container top-container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-lg-9 col-lg-offset-2">
                     <h1 class="title">Сервис оповещений о критических событиях.<br>
-                    Для получения оповещений, введите свои данные:</h1>
+                    Чтобы подписаться на оповещения, оставьте свои данные:</h1>
 
                     <div>
                         <form action="" method="post">{% csrf_token %}
@@ -35,6 +58,11 @@
                              <label>Ваше имя: </label>
                              <input name="{{ form.name.name }}" class="form-control" placeholder="Введите имя">
                          </div>
+                         <div class="form-group">
+                             <label>Ваш телефон: </label>
+                             <input name="{{ form.phone.name }}" class="form-control" placeholder="Введите телефон">
+                         </div>
+
                          <button type="submit" class="btn btn-dark">Отправить</button>
                         </form>
 
@@ -45,7 +73,7 @@
         </div>
     </div>
 
-    <p>today is {{ current_day }}</p>
+    <center><p>Gon Iss Development</p></center>>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

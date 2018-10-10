@@ -27,6 +27,20 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_HOST_USER = '@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+
+EMAIL_PORT = 587
+
+TWILIO_SID = ""
+TWILIO_AUTHTOKEN = ""
+TWILIO_NUMBER = "whatsapp:+"
+
+TWILIO_MESSAGE_ENDPOINT = "https://api.twilio.com/2010-04-01/Accounts/{TWILIO_SID}/Messages.json".format(TWILIO_SID=TWILIO_SID)
 
 # Application definition
 
@@ -39,6 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'home',
+
+    'notifications',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +145,8 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
+
+try:
+    from .settings_prod import *
+except:
+    pass
